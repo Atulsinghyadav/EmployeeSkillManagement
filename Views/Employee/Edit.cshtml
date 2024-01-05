@@ -1,0 +1,57 @@
+@model Employee
+
+<input asp-for="Id" hidden />
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Edit Employee</h2>
+            <hr />
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="Firstname" class="col-sm-2 col-form-label">First Name</label>
+            <div class="col-sm-10">
+                <input asp-for="Firstname" class="form-control" />
+                <span asp-validation-for="Firstname" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="Lastname" class="col-sm-2 col-form-label">Last Name</label>
+            <div class="col-sm-10">
+                <input asp-for="Lastname" class="form-control" />
+                <span asp-validation-for="Lastname" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="DOJ" class="col-sm-2 col-form-label">Date of Joining</label>
+            <div class="col-sm-10">
+                <input asp-for="DOJ" class="form-control" />
+                <span asp-validation-for="DOJ" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="Designation" class="col-sm-2 col-form-label">Designation</label>
+            <div class="col-sm-10">
+                <input asp-for="Designation" class="form-control" />
+                <span asp-validation-for="Designation" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="Email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <button type="submit" class="btn btn-primary btn-block">Update Employee</button>
+            </div>
+            <div class="col-sm-6">
+                <a asp-controller="Employee" asp-action="Index" class="btn btn-primary btn-block">
+                    Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+</form>

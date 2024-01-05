@@ -1,0 +1,63 @@
+@model Employee
+
+<input asp-for="Id" hidden />
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Employee</h2>
+            <hr />
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="Firstname" class="p-0"></label>
+            <input asp-for="Firstname" disabled class="form-control disabled-field" />
+            <span asp-validation-for="Firstname" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="Lastname" class="p-0"></label>
+            <input asp-for="Lastname" disabled class="form-control disabled-field" />
+            <span asp-validation-for="Lastname" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="DOJ" class="p-0"></label>
+            <input asp-for="DOJ" disabled class="form-control disabled-field" />
+            <span asp-validation-for="DOJ" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 row">
+            <label asp-for="Email" class="p-0"></label>
+            <input asp-for="Email" disabled class="form-control disabled-field" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-danger btn-block">Delete Employee</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Employee" asp-action="Index" class="btn btn-primary btn-block">
+                    Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+</form>
+
+<style>
+    /* Custom styles for disabled input fields */
+    .disabled-field {
+        background-color: #f8f9fa;
+        opacity: 1;
+    }
+
+    /* Styling for the red delete button */
+    .btn-danger {
+        padding: 10px 20px;
+        border-radius: 6px;
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+    }
+</style>

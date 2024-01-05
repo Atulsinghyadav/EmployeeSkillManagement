@@ -1,0 +1,26 @@
+@model Skills
+
+<form method="post">
+    <div class="container mt-4">
+        <div class="card border-0 shadow-lg p-4" style="background-color: #f8f9fa; color: #333;">
+            <div class="card-body">
+                <h2 class="text-primary mb-4 font-weight-bold">Edit Skill</h2>
+                
+                <div class="mb-3">
+                    <label asp-for="SkillName" class="form-label">Skill Name</label>
+                    <input asp-for="SkillName" class="form-control" />
+                    <span asp-validation-for="SkillName" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-primary btn-block shadow">Update Skill</button>
+                    </div>
+                    <div class="col-6">
+                        <a asp-controller="Skills" asp-action="Index" asp-route-Id="@Model.Id" class="btn btn-primary btn-block">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

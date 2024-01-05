@@ -1,0 +1,39 @@
+/* Default font size for the entire document */
+html {
+  font-size: 14px;
+}
+
+/* Media query for medium-sized screens (e.g., tablets) */
+@media (min-width: 768px) {
+  /* Increase font size for better readability on larger screens */
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Adjust focus styles for various elements */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* Ensure the body fills the viewport and has minimum margin */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* Add some margin at the bottom of the body to accommodate fixed elements (e.g., footer) */
+body {
+  /* margin-bottom: 60px; */
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media (max-width: 767px) {
+  /* Adjust styles for smaller screens */
+  /* You can add specific styles for mobile devices here */
+  /* Modify layout, font sizes, etc. to fit smaller screens */
+}

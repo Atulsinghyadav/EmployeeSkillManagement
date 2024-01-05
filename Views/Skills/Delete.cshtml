@@ -1,0 +1,27 @@
+@model Skills
+
+<input asp-for="Id" hidden />
+<form method="post">
+    <div class="container mt-4">
+        <div class="card border-0 shadow-lg p-4" style="background-color: #f8f9fa; color: #333;">
+            <div class="card-body">
+                <h2 class="text-danger mb-4 font-weight-bold">Delete Skill</h2>
+                
+                <div class="mb-3">
+                    <label asp-for="SkillName" class="form-label">Skill Name</label>
+                    <input asp-for="SkillName" disabled class="form-control" />
+                    <span asp-validation-for="SkillName" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-danger btn-block shadow">Delete Skill</button>
+                    </div>
+                    <div class="col-6">
+                        <a asp-controller="Skills" asp-action="Index" class="btn btn-primary btn-block">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

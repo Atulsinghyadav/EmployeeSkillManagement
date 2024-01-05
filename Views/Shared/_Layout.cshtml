@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/EmployeeSkillManagement.styles.css" asp-append-version="true" />
+    <style>
+        /* Additional custom CSS */
+        .nav-item {
+            padding: 20px 0; /* Increase the padding */
+        }
+
+        .nav-link {
+            font-size: 18px; /* Increase the font size */
+            text-align: center;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Modify the shadow */
+        }
+
+        .col-md-2.bg-light {
+            box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1); /* Adjust the shadow */
+        }
+
+        .nav-link:hover {
+            transform: scale(1.05); /* Optional: Enlarge on hover */
+        }
+    </style>
+    <script src="_framework/aspnetcore-browser-refresh.js"></script>
+    
+</head>
+
+<body>
+   
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Logo and navigation on the left -->
+            <div class="col-md-2 bg-light vh-100">
+                <!-- Logo on the top-left -->
+                <img src="~/images/Logo.png" alt="Logo" class="img-fluid mt-3 mb-3" style="max-width: 100px;" />
+
+                <!-- Navigation links below the logo -->
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="~/Home/Index">Home</a>
+                    </li>
+                    <!-- Add other navigation links here -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Employee/Index">Employees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Skills/Index">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Admin/Logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Main content area -->
+            <main role="main" class="col-md-10">
+                @* <partial name="_Notification" /> *@
+                <header class="text-center py-4">
+                    <h1>EmployeeSkillManagement</h1>
+                </header>
+
+                <!-- RenderBody content -->
+                <div class="container">
+                    @* <partial name="_Notification" /> *@
+                    @RenderBody()
+                </div>
+            </main>
+        </div>
+    </div>
+
+   <!-- Footer section -->
+     @* <footer class="border-top footer bg-primary text-muted">
+        <div class="container">
+            &copy; 2023 - EmployeeSkillManagement - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>  *@
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

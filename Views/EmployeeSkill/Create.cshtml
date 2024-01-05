@@ -1,0 +1,47 @@
+@model IEnumerable<Skills>
+
+@using (Html.BeginForm("Create", "EmployeeSkill", FormMethod.Post))
+{
+    <div class="border container mt-3" style="max-width: 700px;">
+        <div class="row pb-2">
+            <h2 class="text-primary">Assign Skill</h2>
+        </div>
+
+        <div class="form-group col-10">
+            <label for="experience">Experience</label>
+            <select class="form-control" name="experience" id="experience" required>
+                <option value="" selected disabled hidden>Select Experience</option>
+                @for (int i = 0; i < 25; i++)
+                {
+                    <option value="@i">@i</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group mt-3 col-10">
+            <label for="expertLevel">Expert Level</label>
+            <select class="form-control" name="Rating" id="expertLevel" required>
+                @for (int i = 0; i < 6; i++)
+                {
+                    <option value="@i">@i</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group mt-3 col-10">
+            <label for="skill">Skill</label>
+            <select class="form-control" name="Id" id="skill">
+                <option value="" selected disabled hidden>Select Skill</option>
+                @foreach (var item in Model)
+                {
+                    <option value="@item.Id">@item.SkillName</option>
+                }
+            </select>
+        </div>
+
+        <div class="ml-3 mt-3 mb-3">
+            <input type="submit" class="btn btn-warning" value="Assign Skill" />
+            <a asp-controller="Employee" asp-action="Index" class="btn btn-secondary ml-2">Back to List</a>
+        </div>
+    </div>
+}

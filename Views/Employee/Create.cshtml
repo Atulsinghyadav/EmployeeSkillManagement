@@ -1,0 +1,82 @@
+@model Employee
+
+<style>
+    /* Custom styles for the form */
+    .custom-container {
+        width: 70%; /* Set desired width */
+        margin: auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+    }
+
+    .form-row {
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        width: 100%; /* Take up full width */
+    }
+
+    /* Style for buttons */
+    .btn-primary {
+        padding: 10px 20px;
+        border-radius: 6px;
+        margin-right: 10px;
+    }
+
+    /* Adjust the gap between buttons */
+    .btn-group {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+
+<div class="custom-container">
+    <h2 class="text-primary mb-4">Add Employee</h2>
+    <form method="post">
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="Firstname" class="p-0">First Name</label>
+                <input asp-for="Firstname" class="form-control" />
+                <span asp-validation-for="Firstname" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="Lastname" class="p-0">Last Name</label>
+                <input asp-for="Lastname" class="form-control" />
+                <span asp-validation-for="Lastname" class="text-danger"></span>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-3">
+                <label asp-for="Designation" class="p-0">Designation</label>
+                <input asp-for="Designation" class="form-control" />
+                <span asp-validation-for="Designation" class="text-danger"></span>
+            </div> 
+        @* </div>  *@
+        
+
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="DOJ" class="p-0">Date of Joining</label>
+                <input asp-for="DOJ" class="form-control" />
+                <span asp-validation-for="DOJ" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="Email" class="p-0">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-12">
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-primary">Add Employee</button>
+                    <a asp-controller="Employee" asp-action="Index" class="btn btn-primary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
