@@ -16,15 +16,16 @@
     <table class="table table-bordered table-striped mt-3">
         <thead>
             <tr class="text-center">
-                <th>Id</th>
+                <th>Sr</th>
                 <th>Skill Name</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
+             @{int index = 1; }
             @foreach(var obj in Model){
                 <tr class="text-center">
-                    <td>@obj.Id</td>
+                    <td>@index</td>
                     <td>@obj.SkillName</td>
                     <td>
                         <div class="btn-group w-100 text-center" role="group">
@@ -33,6 +34,7 @@
                         </div>
                     </td>
                 </tr>
+                index += 1;
             }
         </tbody>
     </table>

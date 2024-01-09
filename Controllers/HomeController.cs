@@ -11,17 +11,11 @@ using EmployeeSkillManagement.Models;
 
 namespace EmployeeSkillsManagement.Controllers
 {
-    //  [Authorize]
+    [Authorize]
 
-    // [Authorize(Policy = "RequireAdminRole")]
     public class HomeController : Controller
     {
-        // private readonly ILogger<HomeController> _logger;
-
-        // public HomeController(ILogger<HomeController> logger)
-        // {
-        //     _logger = logger;
-        // }
+       
         private readonly ApplicationDbContext _db;
         public HomeController(ApplicationDbContext db)
         {

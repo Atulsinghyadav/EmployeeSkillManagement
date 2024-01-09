@@ -8,34 +8,41 @@
     <style>
         /* Additional custom CSS */
         .nav-item {
-            padding: 20px 0; /* Increase the padding */
+            padding: 20px 0;
+            /* Increase the padding */
         }
 
         .nav-link {
-            font-size: 18px; /* Increase the font size */
+            font-size: 18px;
+            /* Increase the font size */
             text-align: center;
             display: block;
             padding: 10px 15px;
             margin-bottom: 10px;
             border-radius: 8px;
             transition: all 0.3s ease;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Modify the shadow */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            /* Modify the shadow */
         }
 
         .col-md-2.bg-light {
-            box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1); /* Adjust the shadow */
+            box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1);
+            /* Adjust the shadow */
         }
 
         .nav-link:hover {
-            transform: scale(1.05); /* Optional: Enlarge on hover */
+            transform: scale(1.05);
+            /* Optional: Enlarge on hover */
         }
     </style>
     <script src="_framework/aspnetcore-browser-refresh.js"></script>
-    
+
 </head>
 
 <body>
-   
+
+        @if (User.Identity.IsAuthenticated)
+        {
     <div class="container-fluid">
         <div class="row">
             <!-- Logo and navigation on the left -->
@@ -56,7 +63,10 @@
                         <a class="nav-link" href="~/Skills/Index">Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="~/Admin/Logout">Logout</a>
+                        <form method="post" asp-controller="Account" asp-action="Logout">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="nav-link w-100">Logout</button>
+                        </form>
                     </li>
                 </ul>
             </div>
@@ -76,19 +86,20 @@
             </main>
         </div>
     </div>
+    }
 
-   <!-- Footer section -->
-     @* <footer class="border-top footer bg-primary text-muted">
-        <div class="container">
-            &copy; 2023 - EmployeeSkillManagement - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>  *@
+    <!-- Footer section -->
+    @* <footer class="border-top footer bg-primary text-muted">
+    <div class="container">
+    &copy; 2023 - EmployeeSkillManagement - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>
+    </footer> *@
 
     <!-- Scripts -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 

@@ -38,7 +38,7 @@
                     <td>@obj.Lastname</td>
                     <td>@obj.Email</td>
                     <td>@obj.Designation</td>
-                    <td>@obj.DOJ</td>
+                    <td>@obj.DOJ.ToShortDateString()</td>
                     <td>
                         <div class="btn-group" role="group">
                             <a asp-controller="Employee" asp-action="Edit" asp-route-Id="@obj.Id" class="btn btn-primary mx-2">Edit</a>
