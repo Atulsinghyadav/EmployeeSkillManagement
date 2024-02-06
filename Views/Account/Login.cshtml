@@ -1,4 +1,4 @@
-@model EmployeeSkillsManagement.Models.Admin
+@model EmployeeSkillManagement.Models.LoginViewModel;
 @{
     ViewData["Title"] = "Admin Page";
     Layout = null;
@@ -46,13 +46,13 @@
         <h2 class="text-center mb-4">Admin Login</h2>
         <form method="post" asp-action="Login">
             <div class="form-group">
-                <label asp-for="EMAIL"></label> <br>
-                <input type="email" asp-for="EMAIL" class="form-group form-control" placeholder="Enter email" autocomplete="off" required /><br>
+                <label asp-for="Username"></label> <br>
+                <input type="email" asp-for="Username" class="form-group form-control" placeholder="Enter email" autocomplete="off" required /><br>
                 <span class="text-danger">@TempData["errorMessage"]</span>
             </div>
             <div class="form-group">
-                <label asp-for="PASSWORD"></label> <br>
-                <input type="password" asp-for="PASSWORD" id="tbName" class="form-group form-control" placeholder="Enter password" autocomplete="off" required /><br>
+                <label asp-for="Password"></label> <br>
+                <input type="password" asp-for="Password" id="tbName" class="form-group form-control" placeholder="Enter password" autocomplete="off" required /><br>
                 <span class="text-danger">@TempData["errorPassword"]</span>
             </div>
             <div class="form-group">

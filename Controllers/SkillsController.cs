@@ -10,9 +10,9 @@ using Microsoft.Extensions.Logging;
 
 namespace EmployeeSkillManagement.Controllers
 {
-    // [Route("[controller]")]
+   
 
-    // [Authorize(Policy = "RequireAdminRole")]
+    [Authorize(Roles = "Admin")]
     public class SkillsController : Controller
     {
 
